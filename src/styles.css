@@ -1,1 +1,158 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    color: white !important;
+}
+.nav-fix{
+        position: fixed;
+
+}
+.height{
+    min-height: 100vh;
+}
+.bg{
+    background-color: #121212;
+}
+.cards-bg{
+    background-color: #181818;
+    transition: background-color 0.4s ease;
+}
+.cards-bg:hover{
+    background-color: #282828;
+}
+#play-box{
+    overflow: hidden; 
+}
+#play{
+    width: 60px; 
+    height: 60px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    background-color: #1DB954; 
+    color: black; 
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    
+}
+#artist-pag{
+    width: 60px; 
+    height: 60px; 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    background-color: #1DB954; 
+    color: black; 
+}
+
+.cards-bg:hover #play {
+    opacity: 1;
+  }
+#play:hover , #artist-pag:hover{
+    background-color: #2ccc64;
+    width: 62px; 
+    height: 62px; 
+}
+
+.bg-g{
+    background: rgb(42,42,42);
+    background: linear-gradient(180deg, rgba(42,42,42,1) 0%, rgba(18,18,18,1) 18%);
+}
+
+hr {
+    border-color: white;
+}
+
+.fz{
+    font-size: 9.5rem;
+}
+
+.puntero {
+    cursor: pointer;
+}
+
+.img-circle {
+    border-radius: 100%;
+    width: 150px;
+}
+
+.card-title,
+.card-text {
+    color: black;
+}
+
+.badge {
+    margin-left: 5px;
+}
+
+.btn-outline-success {
+    margin-left: 5px;
+}
+
+.img-thumb {
+    width: 50px;
+    height: 50px;
+}
+
+.mx-auto iframe html body{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.icon-active{
+    & i {
+        color: #bfbfbf;
+    }
+}
+
+.artist-name{
+    color:#a7a7a7;
+    font-size: 14px;
+}
+
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+@media (max-width: 768px) {
+
+    .nav-fix {
+        position: static;
+        margin: auto;
+    }
+}

@@ -1,0 +1,58 @@
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="!loading " class="py-2">
+    <div class="row bg-info bg-gradient bg-opacity-10 rounded-top-5 py-3  animated fadeIn">
+        <div class="col-11 mx-auto d-flex align-items-center">
+            <div class="col-auto me-auto">
+                <h1 class="display-1 fw-bold">{{ artist.name }}</h1>
+                <p class="fw-bold fs-4">{{artist.genres[0] | uppercase }}</p>
+            </div>
+            <div class="col-auto ">
+                <img [src]=" artist.images | noImage " class="img-fluid rounded-pill" width="300px"  alt="{{ artist.name }}">
+            </div>
+        </div>
+    </div>
+   
+    <div class="bg-g row">
+        <div class=" pt-3 pb-4 row">
+            <p class="col-11 m-auto">
+                <a [href]="artist.external_urls.spotify" target="_blank" class="btn btn-outline-light rounded-pill fs-5 border-2 fw-semibold">
+                    Go to the artist's page 
+                    <i id="artist-pag" class="fa-solid fa-play fa-lg"></i>
+                </a>
+            </p>
+
+        </div>
+        <div class="row" *ngIf="!loading">
+            <div class="col-12 m-auto">
+                <p class="fw-bold fs-3">Popular</p>
+                <div class="table-responsive">
+                    <table class="col-11 m-auto"> 
+                        <tbody>
+                            <tr *ngFor="let track of topTracks; let i = index" class="animated fadeIn py-5">
+                            
+                                    <th class=" py-3">{{ i + 1}}</th>
+                                    <td class=""><img [src]=" track.album.images | noImage " alt="" width="50px"></td>
+                                    
+                                    <td class=" col-5">{{ track.name }}</td>
+
+                                    <td class="mx-auto col-auto py-2 animated fadeIn">
+                                        <iframe height="90px" width="230px" [src]=" track.uri | domseguro"></iframe>
+                                    </td>
+                                    <td class="fs-6">{{ track.duration_ms | date: 'm:ss' }}<td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5 ">
+            <div class="col mr-auto">
+                <button routerLink="/home" class="btn btn-outline-light rounded-pill fs-5 p-3 fw-bold" >
+                    Go back
+                </button>
+            </div>
+        </div>
+    </div>  
+</div>
+   

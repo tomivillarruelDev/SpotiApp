@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row py-3">
+        <div class="col-12">
+            <input type="text" class="col-12 col-md-5 p-3 text-white  rounded-pill bg-secondary bg-opacity-10 fs-6 border-0 " placeholder="Search for your artists" (keyup)="searchArtist(inputSearch.value)" #inputSearch> 
+        </div>
+    </div>
+    
+    <div>
+        <p class="fw-bold fs-3">Explore all</p>
+        <app-loading *ngIf="loading"></app-loading>
+        <app-cards [items]="artists" *ngIf="!loading"></app-cards>
+    </div>
+</div>

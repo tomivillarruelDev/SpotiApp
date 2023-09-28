@@ -1,0 +1,29 @@
+<section class="container">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 mb-5 g-3 animated fadeIn">
+      <div class="col" *ngFor="let item of items;">
+        <div class="card h-100 puntero rounded-3 border-0 p-4 cards-bg" (click)="getIdArtist( item )">
+          <div id="play-box" class="position-relative">
+            <img [src]="item.images | noImage"  class="card-img-top rounded-3" [alt]="item.name">
+            <i id="play" class="fa-solid fa-play fa-lg"></i>
+          </div>
+          
+          <div class="pt-3">
+              <h5 *ngIf="item.name.length < 16" class="fs-6 fw-bold text-white ">
+                {{ item.name}}</h5>
+              <h5 *ngIf="item.name.length > 16" class="fs-6 fw-bold text-white ">
+                {{ item.name | slice:0:13 }}...</h5>
+                <p>
+                  <span *ngFor="let artist of item.artists">
+                    <span *ngIf="item.artists.length == 1" class="fw-semibold artist-name">
+                      {{artist.name}}
+                    </span>
+                    <span *ngIf="item.artists.length > 1" class="fw-semibold artist-name">
+                      {{artist.name | slice:0:12 }}
+                    </span>
+                  </span>
+                </p>       
+          </div>
+        </div>   
+      </div>
+    </div>
+</section>

@@ -1,0 +1,9 @@
+
+
+
+<div>
+    <p class="fw-bold fs-3 py-4">Trending now</p>
+    <app-loading *ngIf="loading"></app-loading>
+    <app-cards [items]="newSongs" *ngIf="loading == false"></app-cards>
+</div>
+
